@@ -1,8 +1,8 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/blogy)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/blogy?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/blogy?style=social)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/Ayushi121104/code)
+  ![GitHub stars](https://img.shields.io/github/stars/Ayushi121104/code?style=social)
+  ![GitHub forks](https://img.shields.io/github/forks/Ayushi121104/code?style=social)
 
   <br />
   <br />
