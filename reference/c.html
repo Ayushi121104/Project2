@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Proven Path to Doing Unique and Meaningful Work</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c25757;
+            background-image: url('https://i.pinimg.com/236x/26/4b/ed/264beddbd2bddc87bfcb6e14983425c0.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f6e1af;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #170505;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .about-button {
+            background-color: #228e2f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .about-button:hover {
+            background-color: #3e8e41;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .popup-content {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .close-popup {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .close-popup:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+          <h1>The Toaster Project: Building a Modern Appliance from Scratch</h1>
+
+        </div>
+        <p>In 2010, Thomas Thwaites decided he wanted to build a toaster from scratch. He walked into a shop,
+                 purchased the cheapest toaster he could find, and promptly went home and broke it down piece by piece.
+                 Thwaites had assumed the toaster would be a relatively simple machine. By the time he was finished deconstructing it, 
+                 however, there were more than 400 components laid out on his floor. The toaster contained over 100 different materials with three of the primary ones being plastic, nickel, and steel.</p>
+                  <p>He decided to create the steel components first. After
+           Surprisingly, they agreed.The Toaster Project. The victory was short-lived.When it came time to create the plastic case for his toaster, Thwaites realized he would need crude oil to make the plastic. This time, he called up BP and asked if they would fly him out to an oil rig and lend him some oil for the project. They immediately refused. It seems oil companies aren’t nearly as generous as iron mines.</p> <p>Thwaites had to settle for collecting plastic scraps and melting them into the shape of his toaster case. This is not as easy as it sounds. The homemade toaster ended up looking more like a melted cake than a kitchen appliance.</p> <p>This pattern continued for the entire span of The Toaster Project. It was nearly impossible to move forward without the help of some previous process. To create the nickel components, for example, he had to resort to melting old coins. He would later say, “I realized that if you started absolutely from scratch you could easily spend your life making a toaster.”</p> </p>
+            <button class="about-button" onclick="showPopup()">About the Author</button>
+            <a href="/htmlfiles/blog.html" class="home-link">BACK</a>
+
+        <div class="popup" id="about-author-popup">
+            
+            <div class="popup-content">
+                
+                <h2>About James Clear</h2>
+                <p>James Clear writes about habits, decision making, and continuous improvement. He is the author of the #1 New York Times bestseller, Atomic Habits. The book has sold over 20 million copies worldwide and has been translated into more than 60 languages.</p>
+                <button class="close-popup" onclick="hidePopup()">Close</button>
+            </div>
+        </div>
+        <script>
+            function showPopup() {
+                document.getElementById("about-author-popup").style.display = "block";
+            }
+            function hidePopup() {
+                document.getElementById("about-author-popup").style.display = "none";
+            }
+            function addComment() {
+            const author = document.getElementById("comment-author").value;
+            const content = document.getElementById("comment-content").value;
+            if (author && content) {
+                const commentsList = document.getElementById("comments-list");
+                const commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+                commentDiv.innerHTML = `<strong>${author}</strong>: ${content}`;
+                commentsList.appendChild(commentDiv);
+                document.getElementById("comment-author").value = '';
+                document.getElementById("comment-content").value = '';
+                const successMessage = document.createElement("div");
+                successMessage.textContent = "Comment added successfully";
+                commentsList.appendChild(successMessage);
+            } else {
+                alert("Please enter both name and comment.");
+            }
+        }
+		document.getElementById('add-comment-btn').addEventListener('click', function() {
+    const commentInput = document.getElementById('comment-input');
+    const commentText = commentInput.value;
+
+    if (commentText) {
+        const commentsContainer = document.getElementById('comments-container');
+        
+        // Create a new comment element
+        const commentElement = document.createElement('div');
+        commentElement.className = 'comment';
+        commentElement.textContent = commentText;
+
+        // Append the new comment to the comments container
+        commentsContainer.appendChild(commentElement);
+
+        // Clear the input field
+        commentInput.value = '';
+    }
+});
+        </script>
+    </div>
+</body>
+</html>

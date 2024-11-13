@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Proven Path to Doing Unique and Meaningful Work</title>
+	<style>
+		body {
+  font-family: Arial, sans-serif;
+  background-color: #c25757;
+  background-image: url('https://i.pinimg.com/236x/e8/ca/3e/e8ca3e39af9507d69db98ac344a95f44.jpg'); /* add this line */
+  background-size: cover; /* optional, to scale the image to cover the entire page */
+  background-position: center; /* optional, to center the image */
+}
+		.container {
+			max-width: 800px;
+			margin: 40px auto;
+			padding: 20px;
+			background-color: #f0ecbf;
+			border: 1px solid #ddd;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.header {
+			background-color: #6b5959;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		.header h1 {
+			margin: 0;
+		}
+		.about-button {
+			background-color: #228e2f;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.about-button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Bitter is dead, but her secrets have yet to be buried.</h1>
+		</div>
+		<p> 
+       
+
+
+</p>After the tragic death of Bridget’s parents, her grandmother took her in. Vera Bitter raised her from behind a closed door—cold and uncaring from the moment she arrived at Bitter House. After Bridget’s high school graduation, Vera kicked her out without so much as a goodbye, and Bridget never heard from her again. Which is why, when she receives word of Vera’s passing and discovers she’s inherited the family manor, she’s immediately filled with dread.
+<p>
+Those worries are amplified when she arrives at Bitter House after years away to find an enigmatic piece of her past waiting for her. Growing up, there was only one person Bridget distrusted more than her grandmother, and that was Cole Warner—the son of Vera’s house manager and the bane of her childhood existence. Now, he’s her new housemate.
+</p>
+<p>
+Owning the house she was once forced to leave with a man she’s always despised forces Bridget to confront feelings and questions she’s been running from since the day she was driven away from Bitter House.
+</p>
+Then the first letter arrives.
+<p>
+And with it, a world of secrets, darkness, and deception is unlocked. Years ago, Bridget tried and failed to find sanctuary inside the shadowy halls of Bitter House, and as she struggles to imagine a future there now, she discovers a terrifying behind the iron gate and stone walls of the old estate, nothing is quite what it seems. Bitter House has secrets and, if she can’t decide whom to trust, danger lies in wait.
+     </p>  
+        <button class="about-button" onclick="showPopup()">About the Author</button>
+        <a href="/htmlfiles/blog.html" class="home-link">BACK</a>
+
+<div class="popup" id="about-author-popup">
+  <div class="popup-content">
+    <h2>About Kiersten Modglin</h2>
+    <p>KIERSTEN MODGLIN is a #1 bestselling author of psychological thrillers. Her books have sold over 1.5 million copies and been translated into multiple languages. Kiersten is a member of International Thriller Writers, Novelists, Inc., and the Alliance of Independent Authors.</p>
+    <button class="close-popup" onclick="hidePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+  function showPopup() {
+    document.getElementById("about-author-popup").style.display = "block";
+  }
+
+  function hidePopup() {
+    document.getElementById("about-author-popup").style.display = "none";
+  }
+  function addComment() {
+            const author = document.getElementById("comment-author").value;
+            const content = document.getElementById("comment-content").value;
+            if (author && content) {
+                const commentsList = document.getElementById("comments-list");
+                const commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+                commentDiv.innerHTML = `<strong>${author}</strong>: ${content}`;
+                commentsList.appendChild(commentDiv);
+                document.getElementById("comment-author").value = '';
+                document.getElementById("comment-content").value = '';
+                const successMessage = document.createElement("div");
+                successMessage.textContent = "Comment added successfully";
+                commentsList.appendChild(successMessage);
+            } else {
+                alert("Please enter both name and comment.");
+            }
+        }
+		document.getElementById('add-comment-btn').addEventListener('click', function() {
+    const commentInput = document.getElementById('comment-input');
+    const commentText = commentInput.value;
+
+    if (commentText) {
+        const commentsContainer = document.getElementById('comments-container');
+        
+        // Create a new comment element
+        const commentElement = document.createElement('div');
+        commentElement.className = 'comment';
+        commentElement.textContent = commentText;
+
+        // Append the new comment to the comments container
+        commentsContainer.appendChild(commentElement);
+
+        // Clear the input field
+        commentInput.value = '';
+    }
+});
+</script>
+
+<style>
+  .popup {
+    display: none; /* hide the popup by default */
+    position: fixed; /* position the popup absolutely */
+    top: 50%; /* center the popup vertically */
+    left: 50%; /* center the popup horizontally */
+    transform: translate(-50%, -50%); /* adjust the position to center the popup */
+    background-color: #fff; /* set the background color of the popup */
+    padding: 20px; /* add some padding to the popup */
+    border: 1px solid #ddd; /* add a border to the popup */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a box shadow to the popup */
+    z-index: 1; /* set the z-index to ensure the popup is on top of other elements */
+  }
+
+  .popup-content {
+    max-width: 400px; /* set the maximum width of the popup content */
+    margin: 0 auto; /* center the popup content horizontally */
+    padding: 20px; /* add some padding to the popup content */
+  }
+
+  .close-popup {
+    background-color: #4CAF50; /* set the background color of the close button */
+    color: #fff; /* set the text color of the close button */
+    padding: 10px 20px; /* add some padding to the close button */
+    border: none; /* remove the border of the close button */
+    border-radius: 5px; /* add a border radius to the close button */
+    cursor: pointer; /* change the cursor to a pointer on hover */
+  }
+
+  .close-popup:hover {
+    background-color: #3e8e41; /* change the background color of the close button on hover */
+  }
+</style>
+	</div>
+</body>
+</html>

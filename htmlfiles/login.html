@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin: 0.5rem 0;
+            text-align: left;
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .forgot-password {
+            margin-top: 1rem;
+            display: block;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .toggle-link {
+            margin-top: 1rem;
+            display: block;
+            text-decoration: none;
+            color: #007BFF;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="container">        <a href="/htmlfiles/landingpage.html" class="home-link">HOME</a>
+
+        <h2 id="form-title">Sign In</h2>
+        
+        <form id="loginForm" class="form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <form id="signupForm" class="form hidden">
+        
+            <label for="signup-name">Name:</label>
+            <input type="text" id="signup-name" name="name" required>
+
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="email" required>
+
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="password" required>
+
+            <button type="submit">Create Account</button>
+        </form>
+
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        <span class="toggle-link" id="toggle-link">Create an Account</span>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const toggleLink = document.getElementById('toggle-link');
+
+        // Toggle between Sign In and Sign Up forms
+        toggleLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (loginForm.classList.contains('hidden')) {
+                loginForm.classList.remove('hidden');
+                signupForm.classList.add('hidden');
+                toggleLink.textContent = 'Create an Account'; // Change text to "Create an Account"
+                document.getElementById('form-title').textContent = 'Sign In'; // Change title to "Sign In"
+            } else {
+                loginForm.classList.add('hidden');
+                signupForm.classList.remove('hidden');
+                toggleLink.textContent = 'Already have an account? Sign In'; // Change text to "Sign In"
+                document.getElementById('form-title').textContent = 'Sign Up'; // Change title to "Sign Up"
+            }
+        });
+
+        // Handle Sign In
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the form from submitting traditionally
+
+            // Collect form data (you can implement actual authentication logic here)
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            console.log('Sign In - Email:', email);
+            console.log('Sign In - Password:', password);
+
+            // Simulate a successful login
+            alert('Logged in successfully!'); // Replace with your actual login logic
+            // Redirect to the home page or dashboard
+            window.location.href = '/path/to/home.html'; // Replace with actual home page path
+        });
+
+        // Handle Sign Up
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the form from submitting traditionally
+
+            // Collect form data (you can implement actual registration logic here)
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+
+            console.log('Sign Up - Name:', name);
+            console.log('Sign Up - Email:', email);
+            console.log('Sign Up - Password:', password);
+
+            // Simulate a successful sign-up
+            alert('Account created successfully!'); // Replace with your actual sign-up logic
+            // Redirect to the login page or home page
+            window.location.href = '/path/to/home.html'; // Replace with actual home page path
+        });
+    </script>
+</body>
+</html>

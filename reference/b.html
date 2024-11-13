@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Proven Path to Doing Unique and Meaningful Work</title>
+	<style>
+		body {
+  font-family: Arial, sans-serif;
+  background-color: #c25757;
+  background-image: url('https://i.pinimg.com/236x/26/4b/ed/264beddbd2bddc87bfcb6e14983425c0.jpg'); /* add this line */
+  background-size: cover; /* optional, to scale the image to cover the entire page */
+  background-position: center; /* optional, to center the image */
+}
+		.container {
+			max-width: 1000px;
+			margin: 40px auto;
+			padding: 20px;
+			background-color: #f6e1af;
+			border: 1px solid #ddd;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.header {
+			background-color: #170505;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		.header h1 {
+			margin: 0;
+		}
+		.about-button {
+			background-color: #228e2f;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.about-button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Stay on the bus</h1>
+		</div>
+		<p>In June of 2004, Arno Rafael Minkkinen stepped up to the microphone at the New England School of Photography to deliver the commencement speech.
+
+As he looked out at the graduating students, Minkkinen shared a simple theory that, in his estimation, made all the difference between success and failure. He called it The Helsinki Bus Station Theory.
+The Helsinki Bus Station TheoryMinkkinen was born in Helsinki, Finland.</p> <p>In the center of the city there was a large bus station and he began his speech by describing it to the students.
+“Some two-dozen platforms are laid out in a square at the heart of the city,” Minkkinen said. “At the head of each platform is a sign posting the numbers of the buses that leave from that particular platform. The bus numbers might read as follows: 21, 71, 58, 33, and 19. Each bus takes the same route out of the city for at least a kilometer, stopping at bus stop intervals along the way.”
+
+He continued, “Now let’s say, again metaphorically speaking, that each bus stop represents one year in the life of a photographer. Meaning the third bus stop would represent three years of photographic activity. Ok, so you have been working for three years making platinum studies of nudes. Call it bus #21.”
+
+</p>“You take those three years of work to the Museum of Fine Arts in Boston and the curator asks if you are familiar with the nudes of Irving Penn. His bus, 71, was on the same line. Or you take them to a gallery in Paris and are reminded to check out Bill Brandt, bus 58, and so on. Shocked, you realize that what you have been doing for three years others have already done.”</p>
+
+“So you hop off the bus, grab a cab—because life is short—and head straight back to the bus station looking for another platform.”
+
+<p>“This time,” he said, “you are going to make 8×10 view camera color snapshots of people lying on the beach from a cherry picker crane. You spend three years at it and three grand and produce a series of works that elicit the same comment. Haven’t you seen the work of Richard Misrach? Or, if they are steamy black and white 8x10s of palm trees swaying off a beachfront, haven’t you seen the work of Sally Mann?”
+
+“So once again, you get off the bus, grab the cab, race back and find a new platform. This goes on all your creative life, always showing new work, always being compared to others.”
+
+“Stay on the Bus”.</p>
+
+        <button class="about-button" onclick="showPopup()">About the Author</button>
+        <a href="/htmlfiles/blog.html" class="home-link">BACK</a>
+
+<div class="popup" id="about-author-popup">
+  <div class="popup-content">
+    <h2>About James Clear</h2>
+    <p>James Clear writes about habits, decision making, and continuous improvement. He is the author of the #1 New York Times bestseller, Atomic Habits. The book has sold over 20 million copies worldwide and has been translated into more than 60 languages.</p>
+    <button class="close-popup" onclick="hidePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+  function showPopup() {
+    document.getElementById("about-author-popup").style.display = "block";
+  }
+
+  function hidePopup() {
+    document.getElementById("about-author-popup").style.display = "none";
+  }
+</script>
+
+<style>
+  .popup {
+    display: none; /* hide the popup by default */
+    position: fixed; /* position the popup absolutely */
+    top: 50%; /* center the popup vertically */
+    left: 50%; /* center the popup horizontally */
+    transform: translate(-50%, -50%); /* adjust the position to center the popup */
+    background-color: #fff; /* set the background color of the popup */
+    padding: 20px; /* add some padding to the popup */
+    border: 1px solid #ddd; /* add a border to the popup */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a box shadow to the popup */
+    z-index: 1; /* set the z-index to ensure the popup is on top of other elements */
+  }
+
+  .popup-content {
+    max-width: 400px; /* set the maximum width of the popup content */
+    margin: 0 auto; /* center the popup content horizontally */
+    padding: 20px; /* add some padding to the popup content */
+  }
+
+  .close-popup {
+    background-color: #4CAF50; /* set the background color of the close button */
+    color: #fff; /* set the text color of the close button */
+    padding: 10px 20px; /* add some padding to the close button */
+    border: none; /* remove the border of the close button */
+    border-radius: 5px; /* add a border radius to the close button */
+    cursor: pointer; /* change the cursor to a pointer on hover */
+  }
+
+  .close-popup:hover {
+    background-color: #3e8e41; /* change the background color of the close button on hover */
+  }
+</style>
+	</div>
+</body>
+</html>

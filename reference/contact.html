@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-image: url('https://in.pinterest.com/pin/605523112407183748/');
+            height: 100vh; /* Full height of the viewport */
+        }
+        .container {
+            max-width: 600px;
+            width: 250%; /* Full width within the container */
+            padding: 20px;
+            background-color: rgb(241, 246, 244);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container"> <!-- Added container div -->        <a href="/htmlfiles/landingpage.html" class="home-link">HOME</a>
+
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="response"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Collect form data
+            const formData = new FormData(form);
+
+            // Disable the submit button and show loading message
+            const submitButton = document.querySelector('button');
+            submitButton.disabled = true;
+            submitButton.innerText = 'Submitting...';
+
+            // Use fetch to send the data to Google Apps Script Web App
+            fetch('https://script.google.com/macros/s/AKfycbyyny4mDZluOtxbBtxfBPblLGngovjP4l1MZRR2YrO57-MbobbvBh8-bUFxYypfd9g7lw/exec', { // Replace this with your Web App URL
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(result => {
+                // Show success message
+                document.getElementById('response').innerText = result; // Show success message
+                form.reset(); // Reset the form fields
+                submitButton.disabled = false;
+                submitButton.innerText = 'Submit';
+
+                // Redirect after successful form submission
+                window.location.href = 'thankyou.html'; // Redirect to thank you page
+            })
+            .catch(error => {
+                // Handle error and re-enable the submit button
+                document.getElementById('response').innerText = 'Error submitting the form';
+                console.error('Error:', error);
+                submitButton.disabled = false;
+                submitButton.innerText = 'Submit';
+            });
+        });
+    </script>
+</body>
+</html>

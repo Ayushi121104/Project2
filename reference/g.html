@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Proven Path to Doing Unique and Meaningful Work</title>
+	<style>
+		body {
+  font-family: Arial, sans-serif;
+  background-color: #c25757;
+  background-image: url('https://i.pinimg.com/474x/1d/7d/ed/1d7deddf9e46cd2494ad08d91dd7b35f.jpg'); /* add this line */
+  background-size: cover; /* optional, to scale the image to cover the entire page */
+  background-position: center; /* optional, to center the image */
+}
+		.container {
+			max-width: 800px;
+			margin: 40px auto;
+			padding: 20px;
+			background-color: #cedcf1;
+			border: 1px solid #ddd;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.header {
+			background-color: #150505;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		.header h1 {
+			margin: 0;
+		}
+		.about-button {
+			background-color: #228e2f;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.about-button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Hamlet</h1>
+		</div>
+
+            Delegate Payments a.ka. UPI Circle: Empowering Your Trusted Circle with Digital Payments
+            As Shakespeare’s play opens, Hamlet is mourning his father, who has been killed, and lamenting the behaviour of his mother, Gertrude, who married his uncle Claudius within a month of his father’s death. The ghost of his father appears to Hamlet, informs him that he was poisoned by Claudius, and commands Hamlet to avenge his death.
+        </p> Though instantly galvanized by the ghost’s command, Hamlet decides on further reflection to seek evidence in corroboration of the ghostly visitation, since, he knows, the Devil can assume a pleasing shape and can easily mislead a person whose mind is perturbed by intense grief. Hamlet adopts a guise of melancholic and mad behaviour as a way of deceiving Claudius and others at court—a guise made all the easier by the fact that Hamlet is genuinely melancholic.
+            </p>
+            Hamlet contrives a plan to test the ghost’s accusation. With a group of visiting actors, Hamlet arranges the performance of a story representing circumstances similar to those described by the ghost, under which Claudius poisoned Hamlet’s father. When the play is presented as planned, the performance clearly unnerves Claudius.
+            </p>
+       
+        <button class="about-button" onclick="showPopup()">About the Author</button>
+        <a href="/htmlfiles/blog.html" class="home-link">BACK</a>
+
+<div class="popup" id="about-author-popup">
+  <div class="popup-content">
+    <h2>About William Shakespeare</h2>
+    <p>William Shakespeare was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language and the world's pre-eminent dramatist. He is often called England's national poet and the "Bard of Avon".</p>
+    <button class="close-popup" onclick="hidePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+  function showPopup() {
+    document.getElementById("about-author-popup").style.display = "block";
+  }
+
+  function hidePopup() {
+    document.getElementById("about-author-popup").style.display = "none";
+  }
+  function addComment() {
+            const author = document.getElementById("comment-author").value;
+            const content = document.getElementById("comment-content").value;
+            if (author && content) {
+                const commentsList = document.getElementById("comments-list");
+                const commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+                commentDiv.innerHTML = `<strong>${author}</strong>: ${content}`;
+                commentsList.appendChild(commentDiv);
+                document.getElementById("comment-author").value = '';
+                document.getElementById("comment-content").value = '';
+                const successMessage = document.createElement("div");
+                successMessage.textContent = "Comment added successfully";
+                commentsList.appendChild(successMessage);
+            } else {
+                alert("Please enter both name and comment.");
+            }
+        }
+		document.getElementById('add-comment-btn').addEventListener('click', function() {
+    const commentInput = document.getElementById('comment-input');
+    const commentText = commentInput.value;
+
+    if (commentText) {
+        const commentsContainer = document.getElementById('comments-container');
+        
+        // Create a new comment element
+        const commentElement = document.createElement('div');
+        commentElement.className = 'comment';
+        commentElement.textContent = commentText;
+
+        // Append the new comment to the comments container
+        commentsContainer.appendChild(commentElement);
+
+        // Clear the input field
+        commentInput.value = '';
+    }
+});
+</script>
+
+<style>
+  .popup {
+    display: none; /* hide the popup by default */
+    position: fixed; /* position the popup absolutely */
+    top: 50%; /* center the popup vertically */
+    left: 50%; /* center the popup horizontally */
+    transform: translate(-50%, -50%); /* adjust the position to center the popup */
+    background-color: #fff; /* set the background color of the popup */
+    padding: 20px; /* add some padding to the popup */
+    border: 1px solid #ddd; /* add a border to the popup */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a box shadow to the popup */
+    z-index: 1; /* set the z-index to ensure the popup is on top of other elements */
+  }
+
+  .popup-content {
+    max-width: 400px; /* set the maximum width of the popup content */
+    margin: 0 auto; /* center the popup content horizontally */
+    padding: 20px; /* add some padding to the popup content */
+  }
+
+  .close-popup {
+    background-color: #4CAF50; /* set the background color of the close button */
+    color: #fff; /* set the text color of the close button */
+    padding: 10px 20px; /* add some padding to the close button */
+    border: none; /* remove the border of the close button */
+    border-radius: 5px; /* add a border radius to the close button */
+    cursor: pointer; /* change the cursor to a pointer on hover */
+  }
+
+  .close-popup:hover {
+    background-color: #3e8e41; /* change the background color of the close button on hover */
+  }
+</style>
+	</div>
+</body>
+</html>

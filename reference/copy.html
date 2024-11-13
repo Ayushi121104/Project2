@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Blogger Post Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #ecf0f1;
+            --text-color: #34495e;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .editor-area {
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+        }
+
+        .toolbar {
+            background-color: var(--secondary-color);
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+
+        .toolbar button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .toolbar button:hover {
+            color: var(--accent-color);
+        }
+
+        #editor {
+            min-height: 300px;
+            padding: 20px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        #postForm {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #title {
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            transition: border-color 0.3s;
+        }
+
+        #title:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        #publishBtn {
+            padding: 12px;
+            font-size: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #publishBtn:hover {
+            background-color: #c0392b;
+        }
+
+        #message {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #2ecc71;
+            color: white;
+            border-radius: var(--border-radius);
+            text-align: center;
+            display: none;
+        }
+
+        .home-link {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .home-link:hover {
+            background-color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Attractive Blogger Post Editor</h1>
+        </header>
+        < main>
+            <div class="editor-area">
+                <div class="toolbar">
+                    <button onclick="formatText('bold')"><i class="fas fa-bold"></i></button>
+                    <button onclick="formatText('italic')"><i class="fas fa-italic"></i></button>
+                    <button onclick="formatText('underline')"><i class="fas fa-underline"></i></button>
+                    <button onclick="insertLink()"><i class="fas fa-link"></i></button>
+                    <button onclick="insertImage()"><i class="fas fa-image"></i></button>
+                </div>
+                <div contenteditable="true" id="editor" placeholder="Write your post here..."></div>
+            </div>
+            <form id="postForm" onsubmit="publishPost(event)">
+                <input type="text" id="title" placeholder="Post Title" required />
+                <button type="submit" id="publishBtn">Publish</button>
+            </form>
+            <div id="message"></div>
+        </main>
+        <a href="/htmlfiles/landingpage.html" class="home-link">HOME</a>
+
+        <script>
+            function formatText(command) {
+                document.execCommand(command, false, null);
+            }
+
+            function insertLink() {
+                const url = prompt("Enter the link URL:");
+                if (url) {
+                    document.execCommand('createLink', false, url);
+                }
+            }
+
+            function insertImage() {
+                const url = prompt("Enter the image URL:");
+                if (url) {
+                    document.execCommand('insertImage', false, url);
+                }
+            }
+
+            function publishPost(event) {
+                event.preventDefault();
+                const title = document.getElementById('title').value;
+                const content = document.getElementById('editor').innerHTML;
+
+                // Here you can add code to handle the publishing logic, like sending to a server
+
+                document.getElementById('message').innerText = `Post titled "${title}" published successfully!`;
+                document.getElementById('message').style.display = 'block';
+                document.getElementById('postForm').reset();
+                document.getElementById('editor').innerHTML = '';
+            }
+        </script>
+    </body>
+</html>

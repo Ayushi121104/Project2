@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogger Post Editor</title>
+ 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .editor-area {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #editor {
+            min-height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .toolbar button {
+            margin-right: 5px;
+        }
+        #message {
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <script src="./h1.js"></script>
+    <script src="./h2.js"></script>
+    <script src="./h3.js"></script>
+    <script src="./h4.js"></script>
+    <a href="./h1.html"></a>
+  
+    <header>
+        <h1>Blogger Post Editor</h1>
+    </header>
+    <main>
+        <div class="editor-area">
+            <div class="toolbar">
+                <button onclick="formatText('bold')"><strong>B</strong></button>
+                <button onclick="formatText('italic')"><em>I</em></button>
+                <button onclick="formatText('underline')"><u>U</u></button>
+                <button onclick="insertLink()">Link</button>
+                <button onclick="insertImage()">Image</button>
+            </div>
+            <div contenteditable="true" id="editor" placeholder="Write your post here..."></div>
+        </div>
+        <form id="postForm" onsubmit="publishPost(event)">
+            <input type="text" id="title" placeholder="Post Title" required />
+            <button type="submit" id="publishBtn">Publish</button>
+        </form>
+        <div id="message"></div>
+    </main>
+
+    <script>
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+
+        function insertLink() {
+            const url = prompt("Enter the link URL:");
+            if (url) {
+                document.execCommand('createLink', false, url);
+            }
+        }
+
+        function insertImage() {
+            const url = prompt("Enter the image URL:");
+            if (url) {
+                document.execCommand('insertImage', false, url);
+            }
+        }
+
+        function publishPost(event) {
+            event.preventDefault();
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('editor').innerHTML;
+
+            // Here you can add code to handle the publishing logic, like sending to a server
+
+            document.getElementById('message').innerText = `Post titled "${title}" published successfully!`;
+            document.getElementById('postForm').reset();
+            document.getElementById('editor').innerHTML = '';
+        }
+    </script>
+   
+    <style>
+        .home-link {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007BFF; /* Bootstrap primary color */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+    
+        .home-link:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+    
+    <a href="/htmlfiles/landingpage.html" class="home-link">HOME</a>
+</body>
+</html>
